@@ -13,4 +13,4 @@ A clean, modern Pomodoro timer web application to boost your productivity.
 
 ## Live Demo
 
-Visit [https://YOUR_USERNAME.github.io/pomodoro-timer](https://YOUR_USERNAME.github.io/pomodoro-timer)
+Visit [(https://namandeo.github.io/pomodoro-timer/)](https://namandeo.github.io/pomodoro-timer/)
