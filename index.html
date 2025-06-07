@@ -1,0 +1,97 @@
+<!-- Create a complete Pomodoro and productivity timer website using HTML, CSS, and JavaScript. The website should have:
+
+1. A clean, modern, and beautiful user interface with soft, productive color schemes (like teal, coral, lavender, or pastel tones).
+2. A timer that supports the Pomodoro technique:
+   - 25-minute focus session
+   - 5-minute short break
+   - 15-minute long break after 4 sessions
+3. Buttons to start, pause, and reset the timer.
+4. A session tracker that shows how many Pomodoros have been completed.
+5. Optional: user can customize the timer durations.
+6. Smooth transitions, animations, and a responsive layout.
+7. Visually appealing layout with cards or modular sections.
+8. Progress bar or circular progress ring showing the countdown.
+9. Optional: light/dark theme toggle.
+
+Use semantic HTML5, CSS Flexbox/Grid, and vanilla JavaScript. All code should be well-commented and organized. Include placeholders for adding future features like task lists or notifications. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>    <div class="header-controls">
+        <div class="theme-toggle">
+            <button id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+        <div class="settings-toggle">
+            <button id="settingsToggle">
+                <i class="fas fa-cog"></i>
+            </button>
+        </div>
+        <div class="settings-panel" id="settingsPanel">
+            <h2>Timer Settings</h2>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="focusDuration">Focus Duration (min)</label>
+                    <input type="number" id="focusDuration" value="25" min="0.166" step="0.166">
+                </div>
+                <div class="setting-item">
+                    <label for="shortBreakDuration">Short Break (min)</label>
+                    <input type="number" id="shortBreakDuration" value="5" min="0.166" step="0.166">
+                </div>
+                <div class="setting-item">
+                    <label for="longBreakDuration">Long Break (min)</label>
+                    <input type="number" id="longBreakDuration" value="15" min="0.166" step="0.166">
+                </div>
+            </div>
+            <button id="saveSettings" class="btn secondary">Save Settings</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Pomodoro Timer</h1>
+            <p class="subtitle">Stay focused and productive</p>
+        </header>
+
+        <main class="timer-container">
+            <div class="timer-card">
+                <div class="progress-ring">
+                    <svg class="progress" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                        <circle class="progress-ring-circle-bg" cx="50" cy="50" r="40"/>
+                        <circle class="progress-ring-circle" cx="50" cy="50" r="40"/>
+                    </svg>
+                    <div class="timer-display">
+                        <span id="minutes">25</span>:<span id="seconds">00</span>
+                    </div>
+                </div>
+
+                <div class="timer-controls">
+                    <button id="startBtn" class="btn primary"><i class="fas fa-play"></i> Start</button>
+                    <button id="resetBtn" class="btn secondary"><i class="fas fa-redo"></i> Reset</button>
+                </div>
+
+                <div class="session-info">
+                    <div class="pomodoro-count">
+                        <span id="sessionCount">0</span> Pomodoros completed
+                    </div>
+                    <div class="current-mode">
+                        Focus Time
+                    </div>                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
